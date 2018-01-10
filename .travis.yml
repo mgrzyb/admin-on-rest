@@ -18,6 +18,10 @@ before_install:
     - source ~/.bashrc
     - sh -e /etc/init.d/xvfb start
     - sleep 3
+script:
+  - whereis google-chrome-stable
+  - whereis chromedriver
+  - make test    
 branches:
   only:
     - master

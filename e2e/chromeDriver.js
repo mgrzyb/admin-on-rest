@@ -3,6 +3,8 @@ import webdriver from 'selenium-webdriver';
 import { Options } from 'selenium-webdriver/chrome';
 
 const options = new Options();
+options.addArguments('--headless');
+options.addArguments('--disable-gpu');
 options.addArguments('--start-maximized');
 
 const driver = new webdriver.Builder()
