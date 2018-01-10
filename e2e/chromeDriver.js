@@ -3,7 +3,6 @@ import webdriver from 'selenium-webdriver';
 import { Options } from 'selenium-webdriver/chrome';
 
 const options = new Options();
-options.setChromeBinaryPath('/usr/bin/google-chrome-stable');
 options.addArguments('--headless');
 options.addArguments('--disable-gpu');
 options.addArguments('--start-maximized');
