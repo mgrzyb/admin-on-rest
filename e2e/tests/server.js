@@ -25,12 +25,19 @@ before(
         })
 );
 
-before(() =>
-    driver
-        .manage()
-        .window()
-        .setSize(1200, 800)
-);
+before(() => {
+    try {
+        return driver
+            .manage()
+            .window()
+            .setSize(1200, 800)
+            .catch(error => {
+                console.error(error);
+            });
+    } catch (error) {
+        console.error(error);
+    }
+});
 
 after(() => {
     listeningServer.close();
