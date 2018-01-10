@@ -32,7 +32,7 @@ before(() =>
         .setSize(1200, 800)
 );
 
-after(async () => {
+after(() => {
     listeningServer.close();
     return driver.quit();
 });
