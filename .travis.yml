@@ -7,6 +7,10 @@ env:
         - DISPLAY=:99.0
         - NODE_ENV=test
 dist: trusty
+addons:
+  apt:
+    packages:
+      - google-chrome-stable
 cache:
   yarn: true
   directories:
