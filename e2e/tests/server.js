@@ -6,7 +6,7 @@ let listeningServer;
 
 before(
     () =>
-        new Promise(resolve => {
+        new Promise((resolve, reject) => {
             const server = express();
             server.use(
                 '/',
@@ -14,7 +14,14 @@ before(
                     path.join(__dirname, '../../packages/ra-example')
                 )
             );
-            listeningServer = server.listen(8083, resolve);
+
+            listeningServer = server.listen(8083, err => {
+                if (err) {
+                    return reject(err);
+                }
+
+                resolve();
+            });
         })
 );
 
